@@ -1,15 +1,17 @@
-package movie;
-import lombok.Getter;
-@Getter
+package model;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Film {
+    private int id;
     private String name;
     private int numberTicketAvailable;
     private double price;
-    public Film(String name, int numberTicketAvailable, double price) {
-        this.name = name;
-        this.numberTicketAvailable = numberTicketAvailable;
-        this.price = price;
-    }
+
     public boolean hasEnoughTicket(int cont) {
         return numberTicketAvailable>=cont;
     }
